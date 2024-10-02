@@ -95,7 +95,7 @@ function Check-Medusa(){
 
 # To run:
 # ipmo detect_medusa.ps1
-# Check-Medusa 6> $(hostname)_medusa.log
+# Check-Medusa 6> "$(hostname)_medusa.log"
 
 # To clear:
 # rm detect_medusa.ps1
