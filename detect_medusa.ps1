@@ -102,4 +102,4 @@ function Check-Medusa(){
 # rm NULL
 
 # OneShot:
-# powershell -exec bypass -c (irm -uri https://raw.githubusercontent.com/Atheo-Safety/RI/refs/heads/main/detect_medusa.ps1 > detect_medusa.ps1;ipmo detect_medusa.ps1;Check-Medusa 6> "$(hostname)_medusa.log")
+# powershell -exec bypass -c irm -uri https://raw.githubusercontent.com/Atheo-Safety/RI/refs/heads/main/detect_medusa.ps1 > detect_medusa.ps1;powershell -exec bypass -c 'ipmo detect_medusa.ps1;Check-Medusa 6> "$(hostname)_medusa.log"'
