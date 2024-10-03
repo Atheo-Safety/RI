@@ -8,6 +8,15 @@ function Get-Persistence(){
     else {
         Write-Host "[+] BABYLOCKERZ not found, no persistence" -ForegroundColor green
     }
+    Write-Host "[~] Getting CurrentVersion/RunOnce key";
+    $baby_lockerz_peristence = Get-ItemProperty -Path HKCU:\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONCE -Name BROWSERUPDATECHECK 2>NULL;
+    if ($?){ 
+        Write-Host "[-] BROWSERUPDATECHECK present in registry, medusa persistence installed (HKCU:\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUNONE Value:BROWSERUPDATECHECK)" -ForegroundColor red
+        Write-Host "[-] Value : ",$baby_lockerz_peristence -ForegroundColor red
+    }
+    else {
+        Write-Host "[+] BROWSERUPDATECHECK not found, no persistence" -ForegroundColor green
+    }
 
 }
 function Get-PersistenceAllUsers(){
